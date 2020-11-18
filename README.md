@@ -7,4 +7,7 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 ## Notes
 
 * ...
-  
+
+## Left Off at:
+
+Section 6 - Creating Layouts in Gatsby
