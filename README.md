@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at:
 
-Section 6 - Creating Layouts in Gatsby
+Section 11 - Setting Up Headless CMS
