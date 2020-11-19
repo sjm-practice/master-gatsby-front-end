@@ -3,10 +3,12 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 
-const Layout = () => (
+const Layout = ({ children }) => (
   <div>
     <Nav />
-    <p>I am a page.</p>
+
+    {children}
+
     <Footer />
   </div>
 );

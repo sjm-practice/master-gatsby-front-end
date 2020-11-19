@@ -1,9 +1,5 @@
 import React from 'react';
 
-const PizzasPage = () => (
-  <div>
-    <p>Hey! I'm the pizzas page, yo.</p>
-  </div>
-);
+const PizzasPage = () => <p>Hey! I'm the pizzas page, yo.</p>;
 
 export default PizzasPage;
