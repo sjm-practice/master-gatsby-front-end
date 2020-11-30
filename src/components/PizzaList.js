@@ -40,17 +40,12 @@ const SinglePizza = ({ pizza }) => (
   </PizzaStyles>
 );
 
-const PizzaList = ({ pizzas }) => {
-  //
-  let x;
-
-  return (
-    <PizzaGridStyles>
-      {pizzas.map((pizza) => (
-        <SinglePizza key={pizza.id} pizza={pizza} />
-      ))}
-    </PizzaGridStyles>
-  );
-};
+const PizzaList = ({ pizzas }) => (
+  <PizzaGridStyles>
+    {pizzas.map((pizza) => (
+      <SinglePizza key={pizza.id} pizza={pizza} />
+    ))}
+  </PizzaGridStyles>
+);
 
 export default PizzaList;
