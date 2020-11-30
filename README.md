@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at:
 
-Section 12 - Creating the Toppings Content Type...
+Section 16 - gatsby config sourcing data
