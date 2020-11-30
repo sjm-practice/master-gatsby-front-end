@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at:
 
-Section 16 - gatsby config sourcing data
+Section 23 - dynamically creating pages
