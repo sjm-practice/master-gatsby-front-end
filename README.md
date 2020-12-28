@@ -8,6 +8,6 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 * ...
 
-## Left Off at:
+## Left Off at (completed):
 
-Section 24 - templating and styling single pizza page
+Section 26 -  Sourcing Data from an external API
