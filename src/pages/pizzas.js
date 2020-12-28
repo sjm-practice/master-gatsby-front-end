@@ -33,12 +33,12 @@ export const query = graphql`
   }
 `;
 
-const PizzasPage = ({ data }) => {
+const PizzasPage = ({ data, pageContext }) => {
   const pizzas = data.pizzas.nodes;
 
   return (
     <>
-      <ToppingsFilter />
+      <ToppingsFilter activeTopping={pageContext.topping} />
       <PizzaList pizzas={pizzas} />
     </>
   );
