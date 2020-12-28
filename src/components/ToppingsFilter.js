@@ -67,7 +67,7 @@ const ToppingsFilter = () => {
   return (
     <ToppingsStyles>
       {toppingsWithCounts.map((topping) => (
-        <Link to={`/toppings/${topping.name}`} key={topping.id}>
+        <Link to={`/topping/${topping.name}`} key={topping.id}>
           <span className="name">{topping.name}</span>
           <span className="count">{topping.count}</span>
         </Link>
