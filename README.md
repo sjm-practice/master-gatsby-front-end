@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at:
 
-Section 23 - dynamically creating pages
+Section 24 - templating and styling single pizza page

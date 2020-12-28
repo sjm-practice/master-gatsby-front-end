@@ -1,5 +1,13 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
+const PizzaGridStyled = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+`;
 
 export const query = graphql`
   query($slug: String!) {
@@ -22,8 +30,18 @@ export const query = graphql`
   }
 `;
 
-const SinglePizzaPage = ({ data }) => (
-  <div>Single Pizza - {data.pizza.name}!</div>
+const SinglePizzaPage = ({ data: { pizza } }) => (
+  <PizzaGridStyled>
+    <Img fluid={pizza.image.asset.fluid} />
+    <div>
+      <h2 className="mark">{pizza.name}</h2>
+      <ul>
+        {pizza.toppings.map((topping) => (
+          <li key={topping.id}>{topping.name}</li>
+        ))}
+      </ul>
+    </div>
+  </PizzaGridStyled>
 );
 
 export default SinglePizzaPage;
