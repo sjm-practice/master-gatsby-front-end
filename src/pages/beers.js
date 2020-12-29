@@ -1,5 +1,77 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-const BeersPage = () => <p>Hey! I'm the beers page, yo.</p>;
+export const query = graphql`
+  query {
+    beers: allBeer {
+      nodes {
+        id
+        name
+        price
+        image
+        rating {
+          average
+          reviews
+        }
+      }
+    }
+  }
+`;
+
+const BeerGridStyles = styled.div`
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+`;
+
+const SingleBeerStyles = styled.div`
+  border: 1px solid var(--grey);
+  padding: 2rem;
+  text-align: center;
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    display: grid;
+    align-items: center;
+    font-size: 10px;
+  }
+`;
+
+const BeersPage = ({ data }) => {
+  console.log(data);
+
+  return (
+    <>
+      <h2 className="center">
+        We Have {data.beers.nodes.length} Beers Available. Dine-in Only!
+      </h2>
+      <BeerGridStyles>
+        {data.beers.nodes.map((beer) => {
+          console.log(beer);
+          const rating = Math.round(beer.rating.average);
+
+          return (
+            <SingleBeerStyles key={beer.id}>
+              <img src={beer.image} alt={beer.name} />
+              <h3>{beer.name}</h3>
+              {beer.price}
+              <p title={`${rating} out of 5 stars`}>
+                {`⭐`.repeat(rating)}
+                <span style={{ filter: `grayscale(100%)` }}>
+                  {`⭐`.repeat(5 - rating)}
+                </span>
+                <span>&nbsp;({beer.rating.reviews})</span>
+              </p>
+            </SingleBeerStyles>
+          );
+        })}
+      </BeerGridStyles>
+    </>
+  );
+};
 
 export default BeersPage;
