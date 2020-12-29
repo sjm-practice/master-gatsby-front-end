@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at (completed):
 
-Section 26 -  Sourcing Data from an external API
+Section 29 -  Paginating Data in Gatsby
