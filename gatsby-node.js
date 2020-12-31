@@ -107,7 +107,7 @@ const turnSlicemastersIntoPages = async ({ graphql, actions }) => {
 
   // TODO 2. turn each slicemaster into their own page
   // 3. calculate number of pages
-  const pageSize = +process.env.GATSBY_PAGE_SIZE;
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
 
   // 4. loop from 1 to n (pages) and create page for each

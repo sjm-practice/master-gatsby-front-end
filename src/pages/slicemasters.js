@@ -3,9 +3,11 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+import Pagination from '../components/Pagination';
+
 export const query = graphql`
-  query {
-    slicemasters: allSanityPerson {
+  query($skip: Int = 0, $pageSize: Int = 2) {
+    slicemasters: allSanityPerson(limit: $pageSize, skip: $skip) {
       totalCount
       nodes {
         name
@@ -59,27 +61,38 @@ const SlicemasterStyles = styled.div`
   }
 `;
 
-const SliceMastersPage = ({ data }) => {
+const SliceMastersPage = ({ data, pageContext: { skip, currentPage } }) => {
   const {
     slicemasters: { nodes: slicemasters, totalCount },
   } = data;
   console.log('totalCount:', totalCount);
+  console.log('currentPage:', currentPage);
+  console.log('skip:', skip);
   console.log(slicemasters);
 
   return (
-    <SlicemasterGridStyles>
-      {slicemasters.map((person) => (
-        <SlicemasterStyles key={person.id}>
-          <Link to={`/slicemaster/${person.slug.current}`}>
-            <h2>
-              <span className="mark">{person.name}</span>
-            </h2>
-          </Link>
-          <Img fluid={person.image.asset.fluid} />
-          <p className="description">{person.description}</p>
-        </SlicemasterStyles>
-      ))}
-    </SlicemasterGridStyles>
+    <>
+      <Pagination
+        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
+        totalCount={totalCount}
+        currentPage={currentPage || 1}
+        skip={skip}
+        base="/slicemasters"
+      />
+      <SlicemasterGridStyles>
+        {slicemasters.map((person) => (
+          <SlicemasterStyles key={person.id}>
+            <Link to={`/slicemaster/${person.slug.current}`}>
+              <h2>
+                <span className="mark">{person.name}</span>
+              </h2>
+            </Link>
+            <Img fluid={person.image.asset.fluid} />
+            <p className="description">{person.description}</p>
+          </SlicemasterStyles>
+        ))}
+      </SlicemasterGridStyles>
+    </>
   );
 };
 

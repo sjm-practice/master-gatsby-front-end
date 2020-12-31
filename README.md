@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at (completed):
 
-Section 29 -  Paginating Data in Gatsby
+Section 31 -  Creating a reusable Pagination Component
