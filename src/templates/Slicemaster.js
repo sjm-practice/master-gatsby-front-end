@@ -1,7 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,6 +19,14 @@ export const query = graphql`
   }
 `;
 
-const SlicemasterPage = ({ data: { person } }) => <p>Hey {person.name}!</p>;
+const SlicemasterPage = ({ data: { person } }) => (
+  <div className="center">
+    <Img fluid={person.image.asset.fluid} />
+    <h2>
+      <span className="mark">{person.name}</span>
+    </h2>
+    <p>{person.description}!</p>
+  </div>
+);
 
 export default SlicemasterPage;
