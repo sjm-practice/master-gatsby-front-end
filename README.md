@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at (completed):
 
-Section 31 -  Creating a reusable Pagination Component
+Section 32 -  Single Slicemaster Pages
