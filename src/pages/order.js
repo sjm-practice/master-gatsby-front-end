@@ -1,9 +1,12 @@
 import React from 'react';
 
+import SEO from '../components/SEO';
+
 const OrderPage = () => (
-  <div>
+  <>
+    <SEO title="Order a Pizza!" />
     <p>Hey! I'm the order page, yo.</p>
-  </div>
+  </>
 );
 
 export default OrderPage;

@@ -70,7 +70,7 @@ const Nav = () => (
         <Link to="/slicemasters">SliceMasters</Link>
       </li>
       <li>
-        <Link to="/">Order Ahead!</Link>
+        <Link to="/order">Order Ahead!</Link>
       </li>
     </ul>
   </NavStyles>

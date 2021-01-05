@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import PizzaList from '../components/PizzaList';
+import SEO from '../components/SEO';
 import ToppingsFilter from '../components/ToppingsFilter';
 
 // note, the query can be named anything. Gatsby recognizes an exported qraphql query, and generates
@@ -38,6 +39,13 @@ const PizzasPage = ({ data, pageContext }) => {
 
   return (
     <>
+      <SEO
+        title={
+          pageContext.topping
+            ? `Pizzas With ${pageContext.topping}`
+            : 'All Pizzas'
+        }
+      />
       <ToppingsFilter activeTopping={pageContext.topping} />
       <PizzaList pizzas={pizzas} />
     </>

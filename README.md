@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at (completed):
 
-Section 32 -  Single Slicemaster Pages
+Section 33 -  Gatsby SEO and Head Tags
