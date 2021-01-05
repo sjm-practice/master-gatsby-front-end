@@ -10,4 +10,4 @@ A Premium JavaScript + CSS Training Course from Wes Bos. You can grab the course
 
 ## Left Off at (completed):
 
-Section 33 -  Gatsby SEO and Head Tags
+Section 34 -  Creating Order Page with Custom Hooks

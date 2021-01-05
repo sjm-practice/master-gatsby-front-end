@@ -15,8 +15,6 @@ const SEO = ({ children, location, description, title, image }) => {
     }
   `);
 
-  console.log('site:', site);
-
   return (
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
