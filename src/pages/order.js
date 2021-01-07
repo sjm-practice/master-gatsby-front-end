@@ -6,6 +6,8 @@ import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import calculatePizzaPrice from '../utils/calculatePizzaPrice';
 import formatMoney from '../utils/formatMoney';
+import MenuItemStyles from '../styles/MenuItemStyles';
+import OrderStyles from '../styles/OrderStyles';
 
 export const query = graphql`
   query {
@@ -30,7 +32,7 @@ export const query = graphql`
 `;
 
 const MenuItem = ({ pizza }) => (
-  <div>
+  <MenuItemStyles>
     <Img
       width="50"
       height="50"
@@ -47,7 +49,7 @@ const MenuItem = ({ pizza }) => (
         </button>
       ))}
     </div>
-  </div>
+  </MenuItemStyles>
 );
 
 const OrderPage = ({ data }) => {
@@ -61,7 +63,7 @@ const OrderPage = ({ data }) => {
   return (
     <>
       <SEO title="Order a Pizza!" />
-      <form>
+      <OrderStyles>
         <fieldset>
           <legend>Your Info</legend>
           <label htmlFor="name">
@@ -87,17 +89,17 @@ const OrderPage = ({ data }) => {
           </label>
         </fieldset>
 
-        <fieldset>
+        <fieldset className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
             <MenuItem pizza={pizza} key={pizza.id} />
           ))}
         </fieldset>
 
-        <fieldset>
+        <fieldset className="order">
           <legend>Order</legend>
         </fieldset>
-      </form>
+      </OrderStyles>
     </>
   );
 };
